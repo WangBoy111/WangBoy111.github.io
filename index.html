@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style lang="scss">
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .Content {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(./img/center-bgc.jpg) no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+
+  .title-icon {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 150px;
+    height: 20px;
+    background: url(./img/icbc.png) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .Center-img {
+    margin: 20vh 0 0 50%;
+    transform: translateX(-50%);
+    width: 132px;
+    height: 60px;
+    background: url(./img/Center-img.png) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .text {
+    margin-top: 30px;
+    font-family: PangMenZhengDao;
+    font-weight: bold;
+    font-size: 40px;
+    color: #0595D5;
+    text-align: center;
+  }
+
+  .text1 {
+    margin-top: 10px;
+    font-family: PangMenZhengDao;
+    font-weight: bold;
+    font-size: 24px;
+    color: #0595D5;
+    text-align: center;
+  }
+
+  .bottom {
+    position: fixed;
+    bottom: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 281px;
+    height: 60px;
+    background: url(./img/bottom.png) no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .bottom-text {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #BFF1FE;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 80px;
+  }
+
+  .nav-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 84px;
+    background: url(./img/nav-buttom.png) no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .item {
+      flex: 1;
+      height: 100%;
+
+      .img-box {
+        width: 30px;
+        height: 34px;
+        margin: 20px auto 0;
+      }
+
+      img {
+
+        width: 30px;
+        height: 34px;
+      }
+
+      .Directory-img {
+        height: 25px;
+      }
+
+      .on {
+        display: block;
+        width: 30px;
+        height: 34px;
+        margin: 20px auto 0;
+        width: 55px;
+        height: 51px;
+        margin-top: -5px;
+      }
+
+      .item-text {
+        width: 100%;
+        font-family: PingFang SC;
+        font-weight: 500;
+        font-size: 13px;
+        color: #FFFFFF;
+        text-align: center;
+      }
+    }
+  }
+
+  .pop-up {
+    display: none;
+    position: fixed;
+    top: 40vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    width: 170px;
+    padding: 5px 30px;
+    height: 50px;
+    text-align: center;
+    background: rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+    color: #fff;
+  }
+</style>
+
+<body>
+  <div class="Content">
+    <div class="title-icon"></div>
+    <div class="Center-img"></div>
+    <div class="text">奉献爱心</div>
+    <div class="text1">以爱之名 传递希望</div>
+    <div class="bottom" onclick="showAlert()"></div>
+    <div class="bottom-text">THANK YOU</div>
+    <div class="nav-bottom">
+      <div class="item">
+        <div class="img-box">
+          <img src="./img/Honor.png" alt="">
+        </div>
+        <div class="item-text">我的荣誉</div>
+      </div>
+      <div class="item">
+        <img class="on" src="./img/Help.png" alt="">
+        <div class="item-text">我要助力</div>
+      </div>
+      <div class="item">
+        <div class="img-box">
+          <img class="Directory-img" src="./img/Directory.png" alt="">
+        </div>
+        <div class="item-text">芳名录</div>
+      </div>
+    </div>
+    <div class="pop-up" id="pop-up">本场活动已结束,捐款通道已关闭</div>
+  </div>
+</body>
+<script>
+  function showAlert() {
+    var content = document.getElementById("pop-up");
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+    setTimeout(() => {
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    }, 1500)
+  }
+</script>
+
+</html>
